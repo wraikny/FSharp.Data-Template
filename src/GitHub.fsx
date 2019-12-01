@@ -1,10 +1,7 @@
 #load "./FSharp.Data.fsx"
 open System
 
-[<Literal>]
-let Url = "https://api.github.com/repos/fsharp/FSharp.Data/issues"
-
-type GitHub = FSharp.Data.JsonProvider<Url>
+type GitHub = FSharp.Data.JsonProvider<"https://api.github.com/repos/fsharp/FSharp.Data/issues">
 
 
 let printLatestIssuesOf n s =
