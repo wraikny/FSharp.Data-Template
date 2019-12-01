@@ -12,12 +12,11 @@ GitHub.GetSamples()
 *)
 
 let printIssues n (x : GitHub.Root []) =
-  x
-  |> Seq.filter (fun x -> x.State = "open")
-  |> Seq.truncate n
-  |> Seq.map(fun x -> sprintf "#%d: %s" x.Number x.Title)
-  |> String.concat "\n"
-  |> printfn "%s"
+  x |> Seq.filter (fun x -> x.State = "open")
+    |> Seq.truncate n
+    |> Seq.map(fun x -> sprintf "#%d: %s" x.Number x.Title)
+    |> String.concat "\n"
+    |> printfn "%s"
 
 GitHub.GetSamples() |> printIssues 3
 printfn ""
